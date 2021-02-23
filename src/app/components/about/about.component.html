@@ -1,0 +1,30 @@
+<div id="page_container">
+    <div id="title">
+        <h3>{{greeting}}</h3>
+        <h1>{{title}}</h1>
+        <h4>{{subTitle}}</h4>
+        <a href="https://maoposites.com" target="blank">{{web}}</a>
+    </div>
+
+    <div id="about_img"></div>
+    
+    <div id="ppal_content">
+        <h3>Sobre mi.</h3>
+        <hr>
+        <p>Amante de la tecnología y la investigación, con deseos permanentes de evolución personal. 
+        Autodidacta con estudios en las principales tecnologías de desarrollo Web.
+        Mi objetivo es ser parte de una empresa como desarrollador FrontEnd.
+        <br>Se valorar la importancia de un buen equipo de trabajo, la comunicaión y el mantenimiento de un excelente ambiente laboral.</p>
+    </div>
+
+    <div id="sidebar">
+        <h3>Menu</h3>
+
+        <div><a [routerLink]="['/sobre_mi']" >Sobre mi</a></div>
+        <div><a [routerLink]="['/proyectos']">Proyectos</a></div>
+        <div><a [routerLink]="['/crear_proyecto']">Crear Proyecto</a></div>
+        <div><a [routerLink]="['/contacto']">Contacto</a></div> 
+
+    </div>
+</div>
+

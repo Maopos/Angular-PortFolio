@@ -1,0 +1,44 @@
+<div id="page_container">
+
+
+    <div id="title">
+        <h2>Proyectos Realizados</h2>
+        <hr>
+        
+        <br>
+    </div>
+
+
+
+    <div id="project_img"></div>
+
+    
+    <div id="ppal_content">
+        
+        <ol>
+            <li *ngFor='let project of projects' class="project_list">
+                <a [routerLink]="['/proyecto', project._id]" href=""><h4>{{project.name}}</h4>               
+                <img src="{{url+'get-image/'+ project.image}}" alt="" *ngIf='project.image' class="project_img">
+                <h6>Click par ver los detalles!!</h6></a>
+                <!-- <p>Categoria: {{project.category}}</p>
+                <p>Lenguajes: {{project.languaje}},</p>
+                <p>Plataforma: {{project.description}},</p>
+                <p>Año de realización: {{project.year}}.</p> -->
+            </li>
+        </ol>
+
+    </div>
+        
+        
+        
+        <div id="sidebar">
+            <h3>Menu</h3>
+            
+            <div><a [routerLink]="['/sobre_mi']" >Sobre mi</a></div>
+            <div><a [routerLink]="['/proyectos']">Proyectos</a></div>
+            <div><a [routerLink]="['/crear_proyecto']">Crear Proyecto</a></div>
+            <div><a [routerLink]="['/contacto']">Contacto</a></div> 
+            
+        </div>
+        
+</div>

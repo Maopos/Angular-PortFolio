@@ -1,0 +1,42 @@
+
+<div id="page_container">
+
+    <div id="title">
+        <h2>{{project.name}}</h2>
+        <hr>
+        
+        <br>
+    </div>
+
+    
+    
+    <div id="ppal_content">
+
+        <div id="detail">
+            <img src="{{url+'get-image/'+ project.image}}" alt="" *ngIf='project.image' class="project_img">
+                    
+            <p>Categoria: {{project.category}}</p>
+            <p>Lenguajes: {{project.languaje}}</p>
+            <p>Plataforma: {{project.description}}</p>
+            <p>Año de realización: {{project.year}}.</p>
+
+            <br><br>
+
+            <a href="#">Editar Proyecto</a>
+            <a href="#">Eliminar</a>
+        </div>
+
+        
+
+    </div>
+
+    <div id="sidebar">
+        <h3>Menu</h3>
+
+        <div><a [routerLink]="['/sobre_mi']" >Sobre mi</a></div>
+        <div><a [routerLink]="['/proyectos']">Proyectos</a></div>
+        <div><a [routerLink]="['/crear_proyecto']">Crear Proyecto</a></div>
+        <div><a [routerLink]="['/contacto']">Contacto</a></div> 
+
+    </div>
+</div>

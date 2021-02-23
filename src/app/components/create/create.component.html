@@ -1,0 +1,58 @@
+<div id="page_container">
+
+    <div id="title">
+        <h2>{{title}}</h2>
+        <hr>
+        
+        <br>
+    </div>
+
+    <div id="create_img"></div>
+    
+    <div id="ppal_content">
+        <form #projectForm='ngForm' action="" (ngSubmit)='onSubmit(projectForm)'>
+            <label for="name">Nombre del Proyecto:</label><br>
+            <input type="text" name="name" #name='ngModel' [(ngModel)]='project.name' required><br>
+            <span class="valid_text" *ngIf='name.touched && !name.valid'>Escribe el nombre del proyecto...</span><br>
+
+            <label for="description">Descripción:</label><br>
+            <textarea name="description" #description='ngModel' [(ngModel)]='project.description' required></textarea><br>
+            <span class="valid_text" *ngIf='description.touched && !description.valid'>Escribe la descripción del proyecto...</span><br>
+
+            <label for="category">Categoría:</label><br>
+            <input type="text" name="category" #category='ngModel' [(ngModel)]='project.category' required><br>
+            <span class="valid_text" *ngIf='category.touched && !category.valid'>Escribe la categoria del proyecto...</span><br>
+
+            <label for="languaje">Lenguajes:</label><br>
+            <input type="text" name="languaje" #languaje='ngModel' [(ngModel)]='project.languaje' required><br>
+            <span class="valid_text" *ngIf='languaje.touched && !languaje.valid'>Escribe los lenguajes del proyecto...</span><br>
+
+            <label for="year">Año de Realización:</label><br>
+            <input type="number" name="year" #year='ngModel' [(ngModel)]='project.year' required><br>
+
+            <label for="image">Imagen:</label><br>
+            <input type="file" name="image" placeholder="Subir Imagen" #image='ngModel' [(ngModel)]='project.image' (change)='fileChangeEvent($event)'><br><br>
+
+                    <div class="message success" *ngIf='status == "success"'>
+                        <h5>El Proyecto de ha guardado exitosamente...</h5>
+                        <a [routerLink]="['/proyecto', save_project._id]">Revisar el Proyecto</a>
+                    </div>
+                    
+                    <div class="message failed" *ngIf='status == "failed"'>
+                        <h5>No se ha podido guardar el Proyecto...</h5>
+                    </div><br>
+            
+            <input id='save' type="submit" value="Guardar" [disabled]='!projectForm.form.valid'>
+        </form>
+    </div>
+
+    <div id="sidebar">
+        <h3>Menu</h3>
+
+        <div><a [routerLink]="['/sobre_mi']" >Sobre mi</a></div>
+        <div><a [routerLink]="['/proyectos']">Proyectos</a></div>
+        <div><a [routerLink]="['/crear_proyecto']">Crear Proyecto</a></div>
+        <div><a [routerLink]="['/contacto']">Contacto</a></div> 
+
+    </div>
+</div>

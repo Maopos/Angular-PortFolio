@@ -269,7 +269,12 @@ input, textarea {
     text-align: center;
 }
 
-#detail a {    
+#confirm {
+    color: red;
+}
+
+#detail a { 
+    display: block;   
     padding: 10px 30px;    
     box-shadow: 0 0 20px gray;     
     background: rgba(74, 107, 253);

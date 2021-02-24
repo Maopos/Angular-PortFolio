@@ -1,4 +1,4 @@
-<div id="page_container">
+<div id="page_container" *ngIf='project'>
 
     <div id="title">
         <h2>{{title}}</h2>
@@ -28,10 +28,13 @@
             <span class="valid_text" *ngIf='languaje.touched && !languaje.valid'>Escribe los lenguajes del proyecto...</span><br>
 
             <label for="year">Año de Realización:</label><br>
-            <input type="number" name="year" #year='ngModel' [(ngModel)]='project.year' required><br>
+            <input type="number" name="year" #year='ngModel' [(ngModel)]='project.year' required><br><br>
 
             <label for="image">Imagen:</label><br>
-            <input type="file" name="image" placeholder="Subir Imagen" #image='ngModel' [(ngModel)]='project.image' (change)='fileChangeEvent($event)'><br><br>
+                <span *ngIf='project.image'>
+                    <img src="{{url+'get-image/'+ project.image}}" alt="" style="width: 200px;">
+                </span><br>
+            <input type="file" name="image" placeholder="Subir Imagen" #image='ngModel' [(ngModel)]='project.image' (change)='fileChangeEvent($event)' required><br><br>
 
                     <div class="message success" *ngIf='status == "success"'>
                         <h5>El Proyecto de ha guardado exitosamente...</h5>

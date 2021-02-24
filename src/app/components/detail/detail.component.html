@@ -1,5 +1,5 @@
 
-<div id="page_container">
+<div id="page_container" *ngIf='project'>
 
     <div id="title">
         <h2>{{project.name}}</h2>
@@ -20,10 +20,18 @@
             <p>Plataforma: {{project.description}}</p>
             <p>Año de realización: {{project.year}}.</p>
 
-            <br><br>
+            <br>
+            <div *ngIf="confirm == false">
+                <a [routerLink]="['/editar-proyecto', project._id]">Editar Proyecto</a>
+                <a (click)="setConfirm(true)">Eliminar</a>
+            </div>
 
-            <a href="#">Editar Proyecto</a>
-            <a href="#">Eliminar</a>
+            <div *ngIf="confirm == true">
+                <p id="confirm">Estás seguro de eliminar este proyecto?</p><br>
+                <a (click)="setConfirm(false)">Cancelar</a>
+                <a (click)="deleteProject(project._id)">Confirmar</a>
+            </div>
+
         </div>
 
         
